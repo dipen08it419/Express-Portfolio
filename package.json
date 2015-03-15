@@ -1,0 +1,30 @@
+{
+  "name": "Express-Portfolio",
+  "version": "0.0.1",
+  "description": "This is portfolio site of Dipen Shah developed using Node, Express, and Angular frameworks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dipen08it419/Express-Portfolio.git"
+  },
+  "keywords": [
+    "Dipen",
+    "Shah's",
+    "Portfoili",
+    "Angular",
+    "Express",
+    "Node"
+  ],
+  "author": "Dipen Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dipen08it419/Express-Portfolio/issues"
+  },
+  "homepage": "https://github.com/dipen08it419/Express-Portfolio",
+  "dependencies": {
+    "express": "^4.12.2"
+  }
+}
