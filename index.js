@@ -1,8 +1,9 @@
-var http = require('http');
+var express = require('express')
+var app = express()
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
-}).listen(1337, '127.0.0.1');
+app.listen(1337);
 
-console.log('Server running at http://127.0.0.1:1337/');
+// respond with "hello world" when a GET request is made to the homepage
+app.get('/', function(req, res) {
+  res.send('hello world')
+})
