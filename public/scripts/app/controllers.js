@@ -26,8 +26,14 @@ app.controller('ContactController', ['$scope', '$http', function ($scope, $http)
                 console.log(status);
                 alert('Sorry! Unable to send message, please try again.');
             });
+            
+            //making panel normal
+            $('#contactPanel').addClass('panel-info');
+            $('#contactPanel').removeClass('panel-danger');
         } else {
-            alert('Please fill up the form.');
+            //highlighting panel
+            $('#contactPanel').removeClass('panel-info');
+            $('#contactPanel').addClass('panel-danger');
         }
     }
 }])
