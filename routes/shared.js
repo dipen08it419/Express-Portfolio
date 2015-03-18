@@ -1,3 +1,8 @@
+//File: api.js
+//Author: Dipen Shah
+//Site: https://portfoilo.herokuapp.com/
+//Description: This script handles /shared/ path
+
 var express = require('express');
 var router = express();
 

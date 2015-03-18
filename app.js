@@ -1,3 +1,9 @@
+//File: app.js
+//Author: Dipen Shah
+//Site: https://portfoilo.herokuapp.com/
+//Description: This script contains javascript code that registers different modules required for the express site.
+
+//getting express modules
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -5,10 +11,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//getting scripts/modules that handles various path of the site
 var routes = require('./routes/index');
 var api = require('./routes/api');
 var shared = require('./routes/shared');
-
+//initializing express application
 var app = express();
 
 // view engine setup
@@ -23,6 +30,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//setting route handlers to use when matched route is found
 app.use('/', routes);
 app.use('/contacts', api);
 app.use('/shared',shared);
