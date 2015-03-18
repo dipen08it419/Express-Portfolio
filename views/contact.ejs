@@ -1,10 +1,10 @@
 <!--
-    File: contact.html
+    File: contact.ejs
     Author: Dipen Shah
     Description: This page contains contact information about dipen shah. Author of the page.
 -->
 
-
+<% include ./shared/nav %>
 <div class="page-header">
     <h2>Contact</h2>
 </div>
@@ -37,18 +37,18 @@
             <span class="panel-title">Inquiry Form</span>
         </div>
         <div class="panel-body">
-            <form name="contactForm" novalidate>
-                <div class="form-group" ng-class="{'has-error':contactForm.emailId.$dirty && contactForm.emailId.$invalid}">
+            <form name="contactForm" novalidate onsubmit="SendMessage(); return false;">
+                <div class="form-group">
                     <label class="control-label">Email Id</label>
-                    <input type="email" class="form-control" placeholder="Enter your Email Id" name="emailId" ng-model="emailId" required="true" />
+                    <input type="email" class="form-control" placeholder="Enter your Email Id" name="emailId" id="emailId" required="true" />
                 </div>
-                <div class="form-group" ng-class="{'has-error':contactForm.message.$dirty && contactForm.message.$invalid}">
+                <div class="form-group">
                     <label class="control-label">Message</label>
-                    <textarea class="form-control" name="message" placeholder="Enter message" ng-model="message" required="true"></textarea>
+                    <textarea class="form-control" name="message" placeholder="Enter message" id="message" required="true"></textarea>
                 </div>
-                <input type="button" class="btn btn-primary" value="Send Message" ng-click="SendMessage()" />
-                <!--<input type="submit" class="btn btn-primary" value="Send Message" />-->
+                <input type="button" class="btn btn-primary" value="Send Message" onclick="SendMessage()" />
             </form>
         </div>
     </div>
 </div>
+<% include ./shared/footer %>

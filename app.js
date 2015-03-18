@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var api = require('./routes/api');
+var shared = require('./routes/shared');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/contacts', api);
+app.use('/shared',shared);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -41,6 +43,7 @@ if (app.get('env') === 'development') {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
+        title: 'Page Not Found',
       error: err
     });
   });

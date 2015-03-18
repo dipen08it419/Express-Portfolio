@@ -1,3 +1,30 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!--
+    File: about.ejs
+    Author: Dipen Shah
+    Description: This page contains information about dipen shah. Author of the page.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Page Not Found :: Dipen's Portfoilo</title>
+
+    <link rel="shortcut icon" href="/images/devsd_logo.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"
+
+    <!-- including css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/site.css" />
+</head>
+
+<body>
+    <% include ./shared/nav %>
+    <div class="container container-fluid">
+       <img class="fit center" style="width:100%; height:100%;" src="./images/404.png" />
+      
+           <br />
+            <pre class="col-sm-12 col-md-12"><%= error.stack %></pre>
+    </div>
+
+    <% include ./shared/footer %>
+    </body>
+</html>
