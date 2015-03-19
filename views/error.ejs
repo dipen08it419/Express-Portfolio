@@ -4,28 +4,13 @@
     Site: https://portfoilo.herokuapp.com/
     Description: This page contains html for error page 404.
 -->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Page Not Found :: Dipen's Portfoilo</title>
 
-    <link rel="shortcut icon" href="/images/devsd_logo.png" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"
+<% include ./shared/nav %>
+<div class="container container-fluid">
+   <img class="fit center" style="width:100%; height:100%;" src="\images\404.png" />
 
-    <!-- including css -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/site.css" />
-</head>
+       <br /><br />
+        <pre class="col-sm-12 col-md-12"><%= error.stack %></pre>
+</div>
 
-<body>
-    <% include ./shared/nav %>
-    <div class="container container-fluid">
-       <img class="fit center" style="width:100%; height:100%;" src="./images/404.png" />
-      
-           <br />
-            <pre class="col-sm-12 col-md-12"><%= error.stack %></pre>
-    </div>
-
-    <% include ./shared/footer %>
-    </body>
-</html>
+<% include ./shared/footer %>

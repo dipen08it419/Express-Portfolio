@@ -3,8 +3,8 @@
 //Site: https://portfoilo.herokuapp.com/
 //Description: This script contains javascript functions required in the application.
 
-//this methos is used to call api on /contact/add
-function SendMessage() {
+//this method is used to call api on /contact/add
+function sendMessage() {
     var emailId = $('#emailId'); //get input element
     var message = $('#message'); //get input element
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/; //regex expression for email validation
@@ -53,6 +53,56 @@ function SendMessage() {
             message.parent().addClass('has-error');
         }else{
             message.parent().removeClass('has-error');
+        }
+    }
+}
+
+//this method is used to call api on /contact/add
+function getContacts() {
+    var username = $('#username'); //get input element
+    var password = $('#password'); //get input element
+    
+    //validating input
+    if (username.val() && password.val()) {
+
+        //calling api
+        $.ajax(
+            {
+                url:'/getContacts',
+                method:'POST',   
+                data:({
+                        username: username.val(), 
+                        password: password.val()
+                    }),
+                success:function (data, status, header, config) {
+                        //resetting input fields
+                        username.val('');
+                        password.val('');
+                        //displaying data
+                        $('#responce').text(data);
+                        $('#responceDialog').modal();
+                    },   
+                error:function (data, status, header, config) {
+                        alert('Sorry! Unable to connect, please try again.');
+                    }
+            });
+
+        //making input elements normal
+        username.parent().removeClass('has-error');
+        password.parent().removeClass('has-error');
+    } else {
+        //indicating error on input elements        
+        if(!username.val()){
+            username.parent().addClass('has-error');
+        }
+        else{
+            username.parent().removeClass('has-error');
+        }
+        
+        if(!password.val()){
+            password.parent().addClass('has-error');
+        }else{
+            password.parent().removeClass('has-error');
         }
     }
 }

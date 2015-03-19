@@ -38,7 +38,7 @@
             <span class="panel-title">Inquiry Form</span>
         </div>
         <div class="panel-body">
-            <form name="contactForm" novalidate onsubmit="SendMessage(); return false;">
+            <form name="contactForm" novalidate onsubmit="sendMessage(); return false;">
                 <div class="form-group">
                     <label class="control-label">Email Id</label>
                     <input type="email" class="form-control" placeholder="Enter your Email Id" name="emailId" id="emailId" required="true" />
@@ -47,7 +47,7 @@
                     <label class="control-label">Message</label>
                     <textarea class="form-control" name="message" placeholder="Enter message" id="message" required="true"></textarea>
                 </div>
-                <input type="button" class="btn btn-primary" value="Send Message" onclick="SendMessage()" />
+                <input type="button" class="btn btn-primary" value="Send Message" onclick="sendMessage()" />
             </form>
         </div>
     </div>

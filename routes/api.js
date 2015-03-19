@@ -6,9 +6,12 @@
 
 var express = require('express');
 var router = express();
-var fileWriter = require('fs');
+var fileStream = require('fs');
 
-//handling /contact/add route
+//storing data into file
+var filePath = "./data/contacts.txt";
+
+//handling /contacts/add route
 //this is api which will write contact details on contacts.txt file
 router.post('/add', function(req, res) {
     //storing data into variable
@@ -17,9 +20,8 @@ router.post('/add', function(req, res) {
     data+="Email Id:\t"+req.body.emailId+"\n"
     data+="Message:\t"+req.body.message+"\n";
     data+="--------------------------------------------";
-    //storing data into file
-    var filePath = "./data/contacts.txt";
-    fileWriter.appendFile(filePath, data, function(err){
+    
+    fileStream.appendFile(filePath, data, function(err){
         console.log(err+" "+filePath);
     });
     
